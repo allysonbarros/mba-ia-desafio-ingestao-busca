@@ -8,11 +8,12 @@ from langchain_postgres import PGVector
 
 load_dotenv()
 
-PDF_PATH = os.getenv("PDF_PATH")
-PG_VECTOR_COLLECTION_NAME = os.getenv("PG_VECTOR_COLLECTION_NAME")
-DATABASE_URL = os.getenv("DATABASE_URL")
 
 def ingest_pdf():
+    PDF_PATH = os.getenv("PDF_PATH")
+    PG_VECTOR_COLLECTION_NAME = os.getenv("PG_VECTOR_COLLECTION_NAME")
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
     documents = PyPDFLoader(PDF_PATH).load()
     split_docs = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150).split_documents(documents)
 

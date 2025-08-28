@@ -1,3 +1,12 @@
+import os
+from dotenv import load_dotenv
+
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_postgres import PGVector
+from langchain_core.prompts import PromptTemplate
+
+load_dotenv()
+
 PROMPT_TEMPLATE = """
 CONTEXTO:
 {contexto}
@@ -25,5 +34,9 @@ PERGUNTA DO USUÁRIO:
 RESPONDA A "PERGUNTA DO USUÁRIO"
 """
 
+
 def search_prompt():
-    pass
+	return PromptTemplate(
+		template=PROMPT_TEMPLATE,
+		input_variables=["contexto", "pergunta"]
+	)
