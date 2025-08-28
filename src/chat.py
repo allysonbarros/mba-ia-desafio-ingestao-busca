@@ -37,19 +37,18 @@ def main():
         return
 
     print("Iniciando o chat...")
-    print("-" * 30)
+    print("-" * 60)
 
     while True:
-        if pergunta := input("Faça a sua pergunta:\n\nPERGUNTA: "):
-            print("RESPOSTA: ", end="")
+        if pergunta := input("Faça a sua pergunta: "):
             contexto = __search_on_vector_store(pergunta)
             result = chain.invoke({"contexto": contexto, "pergunta": pergunta})
+            
             print("RESPOSTA: ", end="")
             print(result.content)
 
-            print('---')
+            print("-" * 10)
             print()
-
         else:
             print("Encerrando o chat...")
             break
