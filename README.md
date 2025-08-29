@@ -21,10 +21,10 @@ pip install -r requirements.txt
 Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente necessárias (exemplo: chaves de API, configurações de banco de dados, etc).
 
 ```
-GEMINI_API_KEY=
-DATABASE_URL=
-PG_VECTOR_COLLECTION_NAME=
-PDF_PATH=
+GEMINI_API_KEY=CHANGE_ME
+DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5434/rag
+PG_VECTOR_COLLECTION_NAME=desafio01
+PDF_PATH=document.pdf
 ```
 
 ### 4. Ordem de execução

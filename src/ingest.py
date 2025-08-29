@@ -17,7 +17,7 @@ def ingest_pdf():
     documents = PyPDFLoader(PDF_PATH).load()
     split_docs = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150).split_documents(documents)
 
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     vector_store = PGVector(
         embeddings=embeddings,
         collection_name=PG_VECTOR_COLLECTION_NAME, 

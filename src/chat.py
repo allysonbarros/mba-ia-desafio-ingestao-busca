@@ -11,7 +11,7 @@ def __get_vector_store():
     PG_VECTOR_COLLECTION_NAME = os.getenv("PG_VECTOR_COLLECTION_NAME")
     DATABASE_URL = os.getenv("DATABASE_URL")
 
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     vector_store = PGVector(
         embeddings=embeddings,
         collection_name=PG_VECTOR_COLLECTION_NAME,
